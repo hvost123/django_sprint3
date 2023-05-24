@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, render
 from django.utils import timezone
 from blog.models import Post, Category
 
+
 def index(request):
     template = 'blog/index.html'
     post_list = Post.objects.select_related(
