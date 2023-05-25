@@ -1,6 +1,9 @@
 from django.shortcuts import get_object_or_404, render
 from django.utils import timezone
+
 from blog.models import Post, Category
+
+num_of_public = 5
 
 
 def index(request):
@@ -13,7 +16,7 @@ def index(request):
         pub_date__lte=timezone.now(),
         is_published=True,
         category__is_published=True
-    )[0:5]
+    )[:num_of_public]
     context = {'post_list': post_list}
     return render(request, template, context)
 
