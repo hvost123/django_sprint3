@@ -3,7 +3,7 @@ from django.utils import timezone
 
 from blog.models import Post, Category
 
-num_of_public = 5
+NUM_OF_PUNBLIC = 5
 
 
 def index(request):
