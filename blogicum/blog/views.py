@@ -16,7 +16,7 @@ def index(request):
         pub_date__lte=timezone.now(),
         is_published=True,
         category__is_published=True
-    )[:num_of_public]
+    )[:NUM_OF_PUNBLIC]
     context = {'post_list': post_list}
     return render(request, template, context)
 
